@@ -11,14 +11,126 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
+   
     <div id="root"></div>
     <script type="text/babel">
         function App() {
+            const [darkMode, setDarkMode] = React.useState(false);
+
+            React.useEffect(() => {
+                if (darkMode) {
+                    document.body.classList.add('dark-mode');
+                    document.body.classList.remove('light-mode');
+                } else {
+                    document.body.classList.add('light-mode');
+                    document.body.classList.remove('dark-mode');
+                }
+            }, [darkMode]);
+
             return (
                 <div className="container">
-                    <h1>Jones Kisaka</h1>
-                    <p>Software & Embedded Systems Engineer</p>
-                    <p>Passionate about IoT, Embedded Systems, and building solutions that matter.</p>
+                    {/* Navbar Section */}
+                    <nav style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60px', borderBottom: '1px solid #eee', width: '100%', position: 'relative' }}>
+                        <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, gap: '2rem' }}>
+                            <a href="#" style={{ fontWeight: 'bold', fontSize: '1.2rem', color: '#007acc', textDecoration: 'none' }}>Home</a>
+                            <a href="software.html" style={{ fontWeight: 'bold', fontSize: '1.2rem', color: '#007acc', textDecoration: 'none' }}>Software</a>
+                            <a href="hardware.html" style={{ fontWeight: 'bold', fontSize: '1.2rem', color: '#007acc', textDecoration: 'none' }}>Hardware</a>
+                        </div>
+                        <button
+                            onClick={() => setDarkMode((prev) => !prev)}
+                            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+                            style={{
+                                position: 'absolute',
+                                right: '1rem',
+                                top: '50%',
+                                transform: 'translateY(-50%)',
+                                background: 'none',
+                                border: 'none',
+                                cursor: 'pointer',
+                                padding: 0,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                outline: 'none',
+                            }}
+                        >
+                            {darkMode ? (
+                                // Moon icon
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 12.79A9 9 0 0111.21 3c-.5 0-.68.64-.3.94A7 7 0 1019.06 15.09c.3.38.94.2.94-.3z" fill="#FFD700"/>
+                                </svg>
+                            ) : (
+                                // Sun icon
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="5" fill="#FFD700"/>
+                                    <g stroke="#FFD700" strokeWidth="2">
+                                        <line x1="12" y1="1" x2="12" y2="3" />
+                                        <line x1="12" y1="21" x2="12" y2="23" />
+                                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                        <line x1="1" y1="12" x2="3" y2="12" />
+                                        <line x1="21" y1="12" x2="23" y2="12" />
+                                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                                    </g>
+                                </svg>
+                            )}
+                        </button>
+                    </nav>
+
+                    {/* Photo Section */}
+                    <section style={{ marginBottom: '2rem' }}>
+                        <img 
+                            src="img/kisaka.png" 
+                            alt="Jones Kisaka" 
+                            className="profile-photo"
+                            style={{ borderRadius: '50%', width: '220px', height: '220px', objectFit: 'cover', border: '1px solid grey' }}
+                        />
+                    </section>
+
+                    {/* Name Section */}
+                    <section style={{ marginBottom: '1rem' }}>
+                        <h1>Jones Kisaka</h1>
+                    </section>
+
+                    {/* Description Section */}
+                    <section className="description-section" style={{ marginBottom: '2rem' }}>
+                        <p>Software & Embedded Systems Engineer</p>
+                        <p>Hey. This is Jones Kisaka. I'm passionate about IoT, Embedded Systems, and building solutions that matter. Experienced in designing, developing, and deploying innovative tech solutions for real-world problems. And I love music too 🎸</p>
+                    </section>
+
+                    {/* Contact Section */}
+                    <footer style={{ marginTop: '2rem' }}>
+                        <h3>Contact Me</h3>
+                        <div className="contact-links" style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1rem' }}>
+                            <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="12" fill="#fff"/>
+                                    <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.166 6.84 9.49.5.09.68-.217.68-.483 0-.237-.009-.868-.013-1.703-2.782.604-3.37-1.342-3.37-1.342-.454-1.153-1.11-1.46-1.11-1.46-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.09-.647.35-1.088.636-1.34-2.22-.253-4.555-1.11-4.555-4.943 0-1.09.39-1.98 1.029-2.68-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.59 1.028 2.68 0 3.842-2.338 4.687-4.566 4.936.359.309.678.919.678 1.852 0 1.336-.012 2.417-.012 2.747 0 .268.18.577.688.48C19.13 20.162 22 16.422 22 12c0-5.52-4.48-10-10-10z" fill="#181717"/>
+                                </svg>
+                            </a>
+                            <a href="https://x.com/JonesKisaka2?t=IHkdoc1Hnz456lyU3g7_Uw&s=09" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22.46 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 001.963-2.475 8.94 8.94 0 01-2.828 1.082A4.48 4.48 0 0016.11 4c-2.48 0-4.49 2.014-4.49 4.5 0 .353.04.697.116 1.025C7.728 9.39 4.1 7.575 1.67 4.95c-.386.664-.607 1.437-.607 2.26 0 1.56.793 2.936 2.003 3.744-.736-.023-1.428-.226-2.034-.563v.057c0 2.18 1.548 4.002 3.6 4.418-.377.104-.775.16-1.186.16-.29 0-.568-.028-.84-.08.57 1.77 2.22 3.06 4.18 3.09A8.98 8.98 0 012 19.54c-.65 0-1.29-.038-1.92-.112A12.72 12.72 0 006.29 21c7.547 0 11.675-6.254 11.675-11.675 0-.178-.004-.355-.012-.53A8.18 8.18 0 0024 4.59a8.36 8.36 0 01-2.54.698z" fill="#1DA1F2"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/kisaka_the_jones?igsh=OWtwanVqbHBtcjcw" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 110 10.5 5.25 5.25 0 010-10.5zm0 1.5a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zm5.5.75a1 1 0 110 2 1 1 0 010-2z" fill="#E4405F"/>
+                                </svg>
+                            </a>
+                            <a href="https://youtube.com/@kisakthejones?si=HfD5SAjXD7jAHPWL" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21.8 8.001a2.75 2.75 0 00-1.936-1.945C18.14 6 12 6 12 6s-6.14 0-7.864.056A2.75 2.75 0 002.2 8.001 28.6 28.6 0 002 12a28.6 28.6 0 00.2 3.999 2.75 2.75 0 001.936 1.945C5.86 18 12 18 12 18s6.14 0 7.864-.056a2.75 2.75 0 001.936-1.945A28.6 28.6 0 0022 12a28.6 28.6 0 00-.2-3.999zM10 15.5v-7l6 3.5-6 3.5z" fill="#FF0000"/>
+                                </svg>
+                            </a>
+                            <a href="https://linkedin.com/in/jones-kisaka" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z" fill="#0077B5"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </footer>
                 </div>
             );
         }
