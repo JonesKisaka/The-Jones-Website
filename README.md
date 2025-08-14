@@ -1,125 +1,62 @@
 # Jones Kisaka - Portfolio Website
 
-A modern, responsive portfolio website built with Next.js, featuring Home, About, and Contact pages.
+A modern portfolio website built with Next.js featuring Home, About, and Contact pages.
 
-## Features
-
-- **Modern Design**: Clean, professional design with smooth animations
-- **Responsive**: Works perfectly on desktop, tablet, and mobile devices
-- **Fast Performance**: Built with Next.js for optimal performance
-- **Contact Form**: Functional contact form with validation
-- **Navigation**: Smooth navigation between pages with active state indicators
-
-## Pages
-
-1. **Home**: Introduction and overview of services
-2. **About**: Detailed background, expertise, and philosophy
-3. **Contact**: Contact form and additional contact information
-
-## Tech Stack
-
-- **Framework**: Next.js 14
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS + Custom CSS
-- **Font**: Inter (Google Fonts)
-
-## Getting Started
+## Quick Start
 
 ### Prerequisites
-
 - Node.js 18+ 
 - npm or yarn
 
-### Installation
+### Installation & Run
 
-1. Clone the repository:
+1. **Clone the repository:**
 ```bash
-git clone <repository-url>
+git clone https://github.com/JonesKisaka/The-Jones-Website.git
 cd The-Jones-Website
 ```
 
-2. Install dependencies:
+2. **Install dependencies:**
 ```bash
 npm install
 ```
 
-3. Run the development server:
+3. **Start the development server:**
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. **Open your browser:**
+Visit `http://localhost:3000` (or the port shown in terminal)
 
-### Available Scripts
+## Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run start` - Start production server
-- `npm run lint` - Run ESLint
+
+## Dependencies
+
+- **Next.js 14** - React framework
+- **React 18** - UI library
+- **React DOM** - React rendering
 
 ## Project Structure
 
 ```
 The-Jones-Website/
 ├── app/                    # Next.js app directory
-│   ├── layout.tsx         # Root layout
-│   ├── page.tsx           # Home page
-│   ├── about/
-│   │   └── page.tsx       # About page
-│   ├── contact/
-│   │   └── page.tsx       # Contact page
-│   └── globals.css        # Global styles
+│   ├── layout.js          # Root layout
+│   ├── page.js            # Home page
+│   ├── globals.css        # Styles
+│   ├── about/page.js      # About page
+│   └── contact/page.js    # Contact page
 ├── components/
-│   └── Navigation.tsx     # Navigation component
-├── package.json
-├── next.config.js
-├── tailwind.config.js
-└── README.md
+│   └── Navigation.js      # Navigation component
+├── public/                # Static assets
+└── package.json
 ```
 
-## Customization
+---
 
-### Updating Content
-
-- Edit the content in each page component (`app/page.tsx`, `app/about/page.tsx`, `app/contact/page.tsx`)
-- Update contact information in the Contact page
-- Modify the navigation links in `components/Navigation.tsx`
-
-### Styling
-
-- Global styles are in `app/globals.css`
-- Tailwind CSS classes are used throughout the components
-- Custom CSS classes are defined in `globals.css`
-
-### Contact Form
-
-The contact form is currently set up to log form data to the console. To make it functional:
-
-1. Set up a backend API endpoint
-2. Update the `handleSubmit` function in `app/contact/page.tsx`
-3. Replace the console.log with actual API calls
-
-## Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Deploy automatically
-
-### Other Platforms
-
-Build the project and deploy the `out` directory:
-
-```bash
-npm run build
-npm run start
-```
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## Contact
-
-For questions or support, please reach out through the contact form on the website. 
+**Built by Jones Kisaka** 
