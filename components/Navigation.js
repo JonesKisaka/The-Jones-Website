@@ -2,19 +2,20 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navigation() {
   const pathname = usePathname()
 
   return (
-    <nav style={{ backgroundColor: 'white', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', borderBottom: '1px solid #e5e7eb' }}>
+    <nav className="navbar">
       <div className="container">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
-          <Link href="/" style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#007acc', textDecoration: 'none' }}>
+          <Link href="/" className="nav-brand">
             Jones Kisaka
           </Link>
           
-          <div style={{ display: 'flex', gap: '2rem' }}>
+          <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
             <Link 
               href="/" 
               className={`nav-link ${pathname === '/' ? 'active' : ''}`}
@@ -27,6 +28,7 @@ export default function Navigation() {
             >
               About
             </Link>
+            <ThemeToggle />
           </div>
         </div>
       </div>

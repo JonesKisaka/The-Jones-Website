@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import './globals.css'
-import Navigation from '@/components/Navigation'
+import Navigation from '../components/Navigation'
+import { ThemeProvider } from './context/ThemeContext'
 
 export const metadata = {
   title: 'Jones Kisaka - Software & Embedded Systems Engineer',
@@ -11,10 +12,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Navigation />
-        <main>
-          {children}
-        </main>
+        <ThemeProvider>
+          <Navigation />
+          <main>
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -1,4 +1,4 @@
-// File: /home/kisaka_the_jones/JonesGithub/The-Jones-Website/app/page.tsx
+// File: /home/kisaka_the_jones/JonesGithub/The-Jones-Website/app/page.js
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
