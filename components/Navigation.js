@@ -27,12 +27,6 @@ export default function Navigation() {
             >
               About
             </Link>
-            <Link 
-              href="/contact" 
-              className={`nav-link ${pathname === '/contact' ? 'active' : ''}`}
-            >
-              Contact
-            </Link>
           </div>
         </div>
       </div>

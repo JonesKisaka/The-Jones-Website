@@ -1,9 +1,9 @@
 export default function About() {
   return (
-    <div className="page-container">
+    <div className="about-container">
       <h1>About Me</h1>
       
-      <div className="text-left">
+      <div className="about-content">
         <h2>Background</h2>
         <p>
           I am a dedicated Software & Embedded Systems Engineer with a passion for 
@@ -16,7 +16,7 @@ export default function About() {
         <div className="skills-grid">
           <div className="skill-card">
             <h3>Embedded Systems</h3>
-            <p>Microcontrollers, RTOS, Device Drivers, Hardware Integration</p>
+            <p>Microcontrollers, RTOS, ZephyrDevice Drivers, Hardware Integration</p>
           </div>
           <div className="skill-card">
             <h3>IoT Development</h3>
@@ -25,10 +25,6 @@ export default function About() {
           <div className="skill-card">
             <h3>Software Engineering</h3>
             <p>C/C++, Python, JavaScript, Full-Stack Development</p>
-          </div>
-          <div className="skill-card">
-            <h3>System Architecture</h3>
-            <p>System Design, Optimization, Performance Tuning</p>
           </div>
         </div>
         

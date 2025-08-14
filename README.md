@@ -1,6 +1,6 @@
 # Jones Kisaka - Portfolio Website
 
-A modern portfolio website built with Next.js featuring Home, About, and Contact pages.
+A modern portfolio website built with Next.js featuring Home and About pages.
 
 ## Quick Start
 
@@ -44,17 +44,16 @@ Visit `http://localhost:3000` (or the port shown in terminal)
 ## Project Structure
 
 ```
-The-Jones-Website/
-├── app/                    # Next.js app directory
-│   ├── layout.js          # Root layout
-│   ├── page.js            # Home page
-│   ├── globals.css        # Styles
-│   ├── about/page.js      # About page
-│   └── contact/page.js    # Contact page
-├── components/
-│   └── Navigation.js      # Navigation component
-├── public/                # Static assets
-└── package.json
+        The-Jones-Website/
+        ├── app/                    # Next.js app directory
+        │   ├── layout.js          # Root layout
+        │   ├── page.js            # Home page
+        │   ├── globals.css        # Styles
+        │   └── about/page.js      # About page
+        ├── components/
+        │   └── Navigation.js      # Navigation component
+        ├── public/                # Static assets
+        └── package.json
 ```
 
 ---
